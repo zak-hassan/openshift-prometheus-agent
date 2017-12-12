@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: '2017-12-07T20:02:31Z'
+  labels:
+    app: prometheus
+  name: prometheus
+  namespace: testing
+  resourceVersion: '3231'
+  selfLink: /api/v1/namespaces/testing/services/prometheus
+  uid: 8ec7ffe0-db89-11e7-a716-120849f97f2e
+spec:
+  clusterIP: 172.30.74.63
+  ports:
+    - name: 9090-tcp
+      port: 9090
+      protocol: TCP
+      targetPort: 9090
+  selector:
+    app: prometheus
+    deploymentconfig: prometheus
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
